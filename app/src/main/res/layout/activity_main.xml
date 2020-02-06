@@ -23,12 +23,6 @@
         android:hint="Masukkan angka ke-2 :"
         />
 
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="54dp"
-
-        />
-
     <LinearLayout
         android:layout_gravity="center"
         android:layout_width="wrap_content"
