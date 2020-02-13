@@ -25,7 +25,7 @@
 
     <Space
         android:layout_width="450dp"
-        android:layout_height="35dp"/>
+        android:layout_height="34dp"/>
 
     <EditText
         android:id="@+id/txtemail"
@@ -36,8 +36,12 @@
         android:layout_marginRight="27dp"
         android:layout_marginLeft="27dp"
         android:hint="Email"
-        android:textSize="15sp"
+        android:textSize="17sp"
         />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="26dp"/>
 
     <EditText
         android:id="@+id/txtpassword"
