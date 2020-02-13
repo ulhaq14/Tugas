@@ -3,6 +3,7 @@ package com.ulhaq.apps.kalkulator;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -15,6 +16,8 @@ public class Login extends AppCompatActivity {
     EditText txtpassword;
     Button btnlogin;
 
+    SharedPreferences pref;
+    SharedPreferences.Editor editor;
 
 
     @Override
@@ -24,6 +27,7 @@ public class Login extends AppCompatActivity {
         txtuser = findViewById(R.id.txtemail);
         txtpassword = findViewById(R.id.txtpassword);
         btnlogin = findViewById(R.id.btnlogin);
+        pref = getSharedPreferences("Login", MODE_PRIVATE);
 
         btnlogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -34,6 +38,11 @@ public class Login extends AppCompatActivity {
                     Intent in = new Intent(Login.this, Kalkulatorr.class);
                     in.putExtra("username", txtuser.getText().toString());
                     startActivity(in);
+
+                    editor = pref.edit();
+                    editor.putString("userid", txtuser.getText().toString());
+                    editor.apply();
+                    finish();
                 }else{
                     Toast.makeText(Login.this, "Email atau Password anda salah!!", Toast.LENGTH_SHORT).show();
                 }
