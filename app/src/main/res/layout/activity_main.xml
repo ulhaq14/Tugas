@@ -7,11 +7,16 @@
     android:layout_height="match_parent"
     tools:context=".Kalkulatorr">
 
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        />
+
     <EditText
         android:id="@+id/inputangkake1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Masukkang angka ke-1 :"
+        android:hint="Masukkan angka ke-1 :"
         android:inputType="numberDecimal"
         />
 
@@ -76,11 +81,19 @@
         android:layout_width="380dp"
         android:layout_height="wrap_content" />
 
+    <Button
+        android:id="@+id/btnexit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="EXIT"
+        android:layout_marginLeft="300dp"
+        />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20sp"
-        android:layout_marginTop="420dp"
+        android:layout_marginTop="300dp"
         android:text="Kalkulator Sederhana" />
 
     <TextView
