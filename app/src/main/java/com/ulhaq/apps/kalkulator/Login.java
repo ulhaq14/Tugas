@@ -27,7 +27,7 @@ public class Login extends AppCompatActivity {
         txtuser = findViewById(R.id.txtemail);
         txtpassword = findViewById(R.id.txtpassword);
         btnlogin = findViewById(R.id.btnlogin);
-        pref = getSharedPreferences("Login", MODE_PRIVATE);
+        pref = getSharedPreferences("login", MODE_PRIVATE);
 
         btnlogin.setOnClickListener(new View.OnClickListener() {
             @Override
