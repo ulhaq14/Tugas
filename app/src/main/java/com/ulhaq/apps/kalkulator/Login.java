@@ -32,8 +32,8 @@ public class Login extends AppCompatActivity {
         btnlogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (txtuser.getText().toString().equalsIgnoreCase("ulhaq14@gmail.com") ||
-                txtpassword.getText().toString().equalsIgnoreCase("ulhaq")){
+                if (txtuser.getText().toString().equalsIgnoreCase("haq@gmail.com") ||
+                txtpassword.getText().toString().equalsIgnoreCase("111")){
                     Toast.makeText(Login.this, "Login Berhasil", Toast.LENGTH_SHORT).show();
                     Intent in = new Intent(Login.this, Kalkulatorr.class);
                     in.putExtra("username", txtuser.getText().toString());

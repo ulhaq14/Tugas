@@ -12,13 +12,11 @@ public class SplashScreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
-
-        getSupportActionBar().hide();
         Thread background = new Thread() {
           public void run(){
               try {
                   sleep(3*1000);
-                  Intent i = new Intent(SplashScreen.this, Login.class);
+                  Intent i = new Intent(getBaseContext(), ControlClass.class);
                   startActivity(i);
               }catch (Exception e){
                   Toast.makeText(SplashScreen.this, "Ada yang salah!", Toast.LENGTH_SHORT).show();
