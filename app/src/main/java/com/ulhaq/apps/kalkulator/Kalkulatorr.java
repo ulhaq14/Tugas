@@ -2,6 +2,9 @@ package com.ulhaq.apps.kalkulator;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -11,6 +14,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class Kalkulatorr extends AppCompatActivity implements View.OnClickListener {
+
+    static SharedPreferences sharedPreferences;
+
 
     EditText angka1;
     EditText angka2;
@@ -23,6 +29,7 @@ public class Kalkulatorr extends AppCompatActivity implements View.OnClickListen
     Button buttonke4;
     TextView untukhasil;
     TextView tvuser;
+    Button btnexit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,11 +44,23 @@ public class Kalkulatorr extends AppCompatActivity implements View.OnClickListen
         buttonke3 = findViewById(R.id.buttonke3);
         buttonke4 = findViewById(R.id.buttonke4);
         untukhasil = findViewById(R.id.untukhasil);
+        btnexit = findViewById(R.id.btnexit);
         tvuser = findViewById(R.id.tvuser);
         buttonke1.setOnClickListener(this);
         buttonke2.setOnClickListener(this);
         buttonke3.setOnClickListener(this);
         buttonke4.setOnClickListener(this);
+
+        btnexit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sharedPreferences = getSharedPreferences("login", MODE_PRIVATE);
+                sharedPreferences.edit().clear().commit();
+                Intent i = new Intent(Kalkulatorr.this, Login.class);
+                startActivity(i);
+                finish();
+            }
+        });
 
 
         String username;
